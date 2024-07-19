@@ -1,0 +1,38 @@
+#root {
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  background-color: #fefefe;
+  border: 1px solid red;
+  padding: 1em;
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+  text-align: center;
+  counter-reset: count;
+}
+
+.grid-item {
+  counter-increment: count;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: 0.4em;
+}
+
+.grid-item::before {
+  content: counter(count, upper-roman);
+}
+
+.grid-item:first-child {
+  font-weight: bold;
+}
+
+.grid-item:nth-child(even) {
+  background-color: #fff200;
+}
+
+.grid-item:nth-child(odd) {
+  background-color: #ff00f2;
+}
